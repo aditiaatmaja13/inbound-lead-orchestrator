@@ -45,37 +45,37 @@ Personalization rule:
 """
 
         prompt = f"""
-Write a polished, natural B2B outbound email for a sales rep.
+You are helping an SDR write a first-touch outbound email.
 
-You are reaching out TO the lead/company. You do not work for their company.
-
-Use the enriched data meaningfully:
-- Use the company summary to identify what the company does, but only if company match quality is High.
-- Use the market signal to explain why response speed, inbound handling, or operational consistency matters.
-- Use the lead priority/recommended action to decide urgency.
-- Do NOT dump raw statistics. Convert them into business implications.
-- If company match quality is Low, do NOT mention the company summary. Use only location/property context.
-
-Requirements:
-- Include a subject line.
-- Use the lead's first name: {self._first_name(lead)}
-- 90–130 words.
-- Conversational and specific.
-- Sound like a real SDR, not a marketing brochure.
-- No placeholders like [Name], [Company], [Your Company].
-- Avoid generic phrases: "I hope this finds you well", "explore opportunities", "enhance your efforts", "vibrant market", "synergies".
-- Mention EliseAI by name once as the solution provider.
-- End with a clear, casual CTA for a 15-minute chat.
-
-Preferred structure:
-1. Subject line
-2. Personalized reason for reaching out
-3. Business challenge inferred from enrichment
-4. EliseAI value proposition
-5. Short CTA
+Write a short, natural email that feels specific to this lead — not like a template.
 
 Context:
 {context}
+
+Preferred structure (use this as guidance, not a rigid template):
+1. Subject line
+2. Personalized reason for reaching out
+3. Business challenge inferred from context
+4. Brief mention of EliseAI as a relevant solution
+5. Short, casual CTA
+
+Guidelines:
+- 130-150 words total
+- Sound like a real person (slightly informal, curious tone)
+- Only use the most relevant details from the context — do NOT force everything in
+- Translate data into insight (e.g., do not mention population, describe what that implies)
+- If company match quality is high, use company context meaningfully
+- If it is low, rely more on location/property context
+- Avoid generic phrases like:
+  "I hope this finds you well"
+  "explore opportunities"
+  "enhance your efforts"
+  "game-changer"
+- No placeholders (no [Name], [Company], etc.)
+- Do not list stats directly
+
+End with a simple ask like:
+"Open to a quick 15-min chat next week?"
 
 Return only the email.
 """

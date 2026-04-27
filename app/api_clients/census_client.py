@@ -18,7 +18,7 @@ class CensusClient:
     BASE_URL = "https://api.census.gov/data/2022/acs/acs5/profile"
     STATE_SEARCH_URL = "https://api.census.gov/data/2020/dec/pl"
 
-    def __init__(self, timeout: int = 10):
+    def __init__(self, timeout: int = 20):
         self.timeout = timeout
         self.headers = {
             "User-Agent": "inbound-lead-orchestrator/1.0"

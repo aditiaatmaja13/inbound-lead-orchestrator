@@ -35,7 +35,6 @@ class Lead(BaseModel):
     company_match_quality: Optional[str] = None
     market_population: Optional[int] = None
     median_household_income: Optional[float] = None
-    market_temperature: Optional[str] = None
 
     # Scoring/output fields
     lead_score: Optional[int] = None
@@ -103,7 +102,6 @@ class Lead(BaseModel):
             "company_match_quality": self.company_match_quality,
             "market_population": self.market_population,
             "median_household_income": self.median_household_income,
-            "market_temperature": self.market_temperature,
             "lead_score": self.lead_score,
             "lead_priority": self.lead_priority,
             "enrichment_confidence": self.enrichment_confidence,
